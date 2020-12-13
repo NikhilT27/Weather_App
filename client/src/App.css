@@ -2,20 +2,26 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50px;
+  min-width: 100vw;
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 1vmin);
+  color: white;
+}
+
+.App-footer {
+  background-color: #282c34;
+  min-height: 100px;
+  min-width: 100vw;
+  position: fixed;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +30,42 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.IntroPage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.IntroPage-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.IntroPage-selectCity {
+  border: 1px solid black;
+  border-radius: 40px;
+  width: 400px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: #fe4f5a; */
+}
+
+.IntroPage-selected {
+  border: 1px solid black;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-around;
+}
+.IntroPage-scroll {
+  width: 200px;
+  min-height: 400px;
 }
