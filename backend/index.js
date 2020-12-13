@@ -1,25 +1,28 @@
 const axios = require("axios");
+require("dotenv").config();
 const express = require("express");
+const bodyParser = require("body-parser");
 var cors = require("cors");
 const app = express();
 const port = 5000;
 
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
+app.get("/", (req, res) => {});
+
+app.post("/postLocation", (req, res) => {
+  let { location, lat, lon } = req.body;
+  console.log(`app.post = ${location}`);
   axios
     .get(
-      "https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=hourly,daily&appid=4321754c82d8386987c071756ce895b7"
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${process.env.API_KEY}`
     )
     .then((response) => {
       let data = response.data;
       res.send(data);
     });
-});
-
-app.post("/sendLocation", (req, res) => {
-  let location = req.body.location;
-  res.send(location);
 });
 
 app.listen(port, () => {
