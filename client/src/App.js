@@ -26,8 +26,10 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      {/* <IntroPage /> */}
-      <Location />
+      <div className="App-body">
+        <IntroPage />
+        <Location />
+      </div>
       {/* <Footer /> */}
     </div>
   );
