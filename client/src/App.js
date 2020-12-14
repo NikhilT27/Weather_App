@@ -7,6 +7,7 @@ import useSWR from "swr";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import IntroPage from "./components/IntroPage";
+import Location from "./features/location/Location";
 
 function App() {
   // const [weatherDetail, setWeatherDetail] = useState({});
@@ -25,8 +26,8 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <IntroPage />
-
+      {/* <IntroPage /> */}
+      <Location />
       {/* <Footer /> */}
     </div>
   );
