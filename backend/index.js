@@ -17,7 +17,7 @@ app.post("/postLocation", (req, res) => {
   console.log(`app.post = ${location}`);
   axios
     .get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${process.env.API_KEY}`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=hourly,daily&appid=${process.env.API_KEY}`
     )
     .then((response) => {
       let data = response.data;
