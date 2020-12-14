@@ -38,14 +38,39 @@ export default function IntroPage() {
             <div className="timezone-text">{locationData.location}</div>
             <div className="timezone-text">{weatherDetail.timezone}</div>
             <div className="degree-text">{weatherDetail.current.temp} °C</div>
-            <div className="feels-text">Feels like</div>
+            <div className="feels-text">
+              {weatherDetail.current.feels_like} °C
+              {weatherDetail.current.weather.map((each_data) => {
+                return (
+                  <div key={each_data.id}>
+                    <div className="capitalize-text">
+                      {each_data.description}
+                    </div>
+                    <img
+                      src={`http://openweathermap.org/img/wn/${each_data.icon}@2x.png`}
+                    ></img>
+                  </div>
+                );
+              })}
+            </div>
             <div className="weather-more-detail">
-              <div className="detail-data">Visibility: 10.0km</div>
-              <div className="detail-data">clouds</div>
-              <div className="detail-data">wind_speed wind_deg</div>
-              <div className="detail-data">Pressure: 1001hPa</div>
-              <div className="detail-data">Humidity: 90%</div>
-              <div className="detail-data">Dew Point: °C</div>
+              <div className="detail-data">
+                Visibility: {weatherDetail.current.visibility / 1000}km
+              </div>
+              <div className="detail-data">{weatherDetail.current.clouds}</div>
+              <div className="detail-data">
+                {weatherDetail.current.wind_deg}
+                {weatherDetail.current.wind_speed}
+              </div>
+              <div className="detail-data">
+                Pressure: {weatherDetail.current.pressure} hPa
+              </div>
+              <div className="detail-data">
+                Humidity: {weatherDetail.current.humidity} %
+              </div>
+              <div className="detail-data">
+                Dew Point: {weatherDetail.current.dew_point}°C
+              </div>
             </div>
           </div>
         ) : (
