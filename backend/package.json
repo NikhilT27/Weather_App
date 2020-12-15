@@ -9,7 +9,8 @@
     "yarn": "1.22.4"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "yarn build"
   },  
   "dependencies": {
     "axios": "^0.21.0",
