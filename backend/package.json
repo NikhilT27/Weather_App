@@ -1,5 +1,6 @@
 {
-  "name": "backend",
+  "name": "weather-app-backend",
+  "description": "Weather App for India backend",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
