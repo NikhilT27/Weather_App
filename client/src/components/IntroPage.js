@@ -11,12 +11,22 @@ export default function IntroPage() {
   const [weatherDetail, setWeatherDetail] = useState({});
 
   useEffect(() => {
-    axios
-      .post("http://localhost:5000/postLocation", locationData)
-      .then((response) => setWeatherDetail(response.data));
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+    try {
+      axios
+        .post("http://localhost:5000/postLocation", locationData)
+        .then((response) => setWeatherDetail(response.data));
+    } catch (error) {
+      console.log(error);
+    }
 
     console.log(locationData);
     console.log(weatherDetail);
+
+    return () => {
+      source.cancel();
+    };
   }, [locationData]);
 
   return (
@@ -30,12 +40,12 @@ export default function IntroPage() {
         />
       </div>
       <div className="IntroPage-currentCity-Box">
-        {locationData.location ? (
+        {locationData.location && weatherDetail ? (
           <div className="IntroPage-currentCity-data">
+            <div className="timezone-text">{locationData.location}</div>
             <div className="date-text">
               {new Date(weatherDetail.current.dt * 1000).toLocaleString()}
             </div>
-            <div className="timezone-text">{locationData.location}</div>
             <div className="timezone-text">{weatherDetail.timezone}</div>
             <div className="degree-text">{weatherDetail.current.temp} °C</div>
             <div className="feels-text">
@@ -74,7 +84,10 @@ export default function IntroPage() {
             </div>
           </div>
         ) : (
-          <div>Please select city</div>
+          <div>
+            <div className="exclamation-mark">!!</div>
+            <div className="please-select-city">Please select city</div>
+          </div>
         )}
       </div>
     </div>

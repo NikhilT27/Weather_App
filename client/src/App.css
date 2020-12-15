@@ -102,8 +102,19 @@
   padding-right: 10px;
 }
 
+.exclamation-mark {
+  font-size: 100px;
+  font-weight: 600;
+  color: #ff4f5a;
+}
+
+.please-select-city {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .Location {
-  position: fixed;
+  position: absolute;
   top: auto;
   right: 0;
   display: flex;
@@ -111,22 +122,36 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: left;
-  border-left: 10px solid #ff4f5a;
-  height: 100vh;
+  border-left: 5px solid #ff4f5a;
+  height: auto;
   width: 25vw;
 }
 
 .select-major-city {
+  color: #ff4f5a;
   font-size: 25px;
+  font-weight: 600;
+  padding: 10px;
 }
 
 .Location-scroll {
   position: relative;
   top: 0px;
   overflow: scroll;
-  width: 25vw;
-  height: 60vh;
-  background-color: yellow;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 20vw;
+  height: 50vh;
+}
+
+.each-city-button {
+  color: #ff4f5a;
+  background-color: white;
+  border: 2px solid #ff4f5a;
+  border-radius: 15px;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .each-city-data {
@@ -147,4 +172,17 @@
 
 .capitalize-text {
   text-transform: capitalize;
+}
+
+.demo1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.demo {
+  width: 40vw;
+  height: 30vh;
+  background-color: yellow;
 }

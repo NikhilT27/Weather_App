@@ -30,6 +30,12 @@ function App() {
         <IntroPage />
         <Location />
       </div>
+      <div className="demo1">
+        {/* <div className="demo">asdasdasd</div>
+        <div className="demo">asdasdasd</div>
+        <div className="demo">asdasdasd</div> */}
+      </div>
+
       {/* <Footer /> */}
     </div>
   );

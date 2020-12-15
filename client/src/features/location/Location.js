@@ -12,18 +12,13 @@ export default function Location() {
     <div className="Location">
       <div>
         <div className="select-major-city">Select One City</div>
-        {locationData.location ? (
-          <div>{locationData.location}</div>
-        ) : (
-          <div></div>
-        )}
-
         <div className="Location-scroll">
           <div className="each-city-data">
             {IndianCities.map((data) => {
               return (
                 <div key={data.city + 123} className="each-city">
                   <button
+                    className="each-city-button"
                     onClick={() => {
                       dispatch(
                         changeLocation({
