@@ -15,7 +15,7 @@ export default function IntroPage() {
     const source = CancelToken.source();
     try {
       axios
-        .post("http://localhost:5000/postLocation", locationData)
+        .post("/postLocation", locationData)
         .then((response) => setWeatherDetail(response.data));
     } catch (error) {
       console.log(error);
