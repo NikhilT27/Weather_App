@@ -1,0 +1,5 @@
+/ /index.html 200
+
+/users/*  https://weather-api-27.herokuapp.com/users/:splat  200
+
+/postLocation/*  https://weather-api-27.herokuapp.com/postLocation/:splat  200
