@@ -26,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+
       <div className="App-body">
         <IntroPage />
         <Location />
@@ -36,7 +37,7 @@ function App() {
         <div className="demo">asdasdasd</div> */}
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

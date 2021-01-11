@@ -32,12 +32,7 @@ export default function IntroPage() {
   return (
     <div className="IntroPage">
       <div className="IntroPage-image">
-        <img
-          src={IntroImg}
-          alt="Girl in a jacket"
-          width="450px"
-          height="auto"
-        />
+        <img src={IntroImg} alt="Girl in a jacket" className="img_size" />
       </div>
       <div className="IntroPage-currentCity-Box">
         {locationData.location && weatherDetail ? (
@@ -84,7 +79,7 @@ export default function IntroPage() {
             </div>
           </div>
         ) : (
-          <div>
+          <div className="empty-data">
             <div className="exclamation-mark">!!</div>
             <div className="please-select-city">Please select city</div>
           </div>
